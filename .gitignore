@@ -1,4 +1,6 @@
 .idea
+.cache/
+.eggs/
+gg_graph.egg-info/
+input.csv
 __pycache__/
-
-

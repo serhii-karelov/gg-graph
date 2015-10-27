@@ -16,7 +16,7 @@ OPERATORS = {
 
 
 def _filter(paths, attr, op, stop_value):
-    op = dict(OPERATORS).get(op)
+    op = OPERATORS.get(op)
     filtered = list(filter(lambda p: op(getattr(p, attr), stop_value), paths))
     return filtered
 
@@ -39,12 +39,6 @@ def get_paths_filtered_by_length(g, start, end, op, stop_value):
 
 def get_shortest_path_length(g, start, end):
     return g.get_shortest_path_length(start, end)
-
-
-def get_possible_paths_length(g, start, end, op, stop_value):
-    paths = g.get_paths_by_weight(start, end, stop_value)
-    filtered = list(_filter(paths, graph.ATTR_NAME_DEPTH, op, stop_value))
-    return len(filtered)
 
 
 def get_graph(path):
@@ -73,11 +67,6 @@ def process_paths_by_stops(args):
 def process_paths_by_distance(args):
     g = get_graph(args.file)
     return get_paths_filtered_by_length(g, args.start, args.end, args.operator, args.value)
-
-
-def process_possible_paths(args):
-    g = get_graph(args.file)
-    return get_possible_paths_length(g, args.start, args.end, args.operator, args.value)
 
 
 def init_command_line_args():
@@ -118,10 +107,7 @@ def init_command_line_args():
     paths_by_distance_parser = subparsers.add_parser('paths-by-distance')
     paths_by_distance_parser.set_defaults(process=process_paths_by_distance)
 
-    possible_paths_parser = subparsers.add_parser('possible-paths')
-    possible_paths_parser.set_defaults(process=process_possible_paths)
-
-    for p in (paths_by_stops_path_parser, paths_by_distance_parser, possible_paths_parser):
+    for p in (paths_by_stops_path_parser, paths_by_distance_parser):
         for args, kwargs in filtering_args:
             p.add_argument(*args, **kwargs)
 

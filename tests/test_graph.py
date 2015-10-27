@@ -10,14 +10,6 @@ def empty_graph():
     return graph.Graph()
 
 
-@pytest.fixture(scope='session')
-def csv_file_path(tmpdir_factory):
-    csv_data = "A,B,5\nB,C,4\nC,D,8\nD,C,8\nD,E,6\nA,D,5\nC,E,2\nE,B,3\nA,E,7\n"
-    f = tmpdir_factory.mktemp('input_files').join('data.csv')
-    f.write(csv_data)
-    return str(f)
-
-
 @pytest.fixture
 def graph_with_data(empty_graph, csv_file_path):
     empty_graph.load_from_csv(csv_file_path)
