@@ -15,8 +15,8 @@ The packages goes with command line utility (with alias `graph`) witch has follo
  
  example of usage:
  
-  - `$ graph distance ./input.csv --route A,E,B,C` - prints the distance of the route A­E­B­C­D
-  - `$ graph distance ./input.csv -r A,C` - prints the distance of the route A­D
+ - `$ graph distance ./input.csv --route A,E,B,C` - prints the distance of the route A­E­B­C­D
+ - `$ graph distance ./input.csv -r A,C` - prints the distance of the route A­D
 
 ####**shortest-path** 
  - `positional argument` - path to CSV file with graph 
@@ -25,8 +25,8 @@ The packages goes with command line utility (with alias `graph`) witch has follo
  
  example of usage:
   
-  - `$ graph shortest-path ./input.csv --start A --end B` - prints the shortest path from A to B
-  - `$ graph shortest-path ./input.csv -s E -e A` - prints the shortest path from E to A
+ - `$ graph shortest-path ./input.csv --start A --end B` - prints the shortest path from A to B
+ - `$ graph shortest-path ./input.csv -s E -e A` - prints the shortest path from E to A
    
   If there is no such path - prints inf (Infinity)
    
@@ -41,12 +41,12 @@ The packages goes with command line utility (with alias `graph`) witch has follo
  
  example of usage:
   
-  - `$ graph paths-by-stops ./input.csv --start C --end C --operator '<=' --value 3` - prints number 
-  of different routes starting at C and ending at C with a *maximum* of 3 stops
-  - `$ graph paths-by-stops ./input.csv -s E -e B -o '<' -v 4` - prints number 
-  of different routes starting at E and ending at B *with less than* 4 stops 
-  - `$ graph paths-by-stops ./input.csv --start A --end E --operator '==' --value 3` - prints number 
-  of different routes starting at A and ending at E *with exactly* 3 stops 
+ - `$ graph paths-by-stops ./input.csv --start C --end C --operator '<=' --value 3` - prints number 
+ of different routes starting at C and ending at C with a *maximum* of 3 stops
+ - `$ graph paths-by-stops ./input.csv -s E -e B -o '<' -v 4` - prints number 
+ of different routes starting at E and ending at B *with less than* 4 stops 
+ - `$ graph paths-by-stops ./input.csv --start A --end E --operator '==' --value 3` - prints number 
+ of different routes starting at A and ending at E *with exactly* 3 stops 
    
 ####**paths-by-distance** 
  Returns number of trips between two vertices with a maximum (less or equal, depends on operator) distance of N.
@@ -59,10 +59,10 @@ The packages goes with command line utility (with alias `graph`) witch has follo
  
  example of usage:
   
-  - `$ graph paths-by-distance ./input.csv --start C --end C --operator '<' --value 30` - prints number 
-  of different routes starting at C and ending at C with a length *less than* 30
-  - `$ graph paths-by-distance ./input.csv -s E -e B -o '<=' -v 17` - prints number 
-  of different routes starting at E and ending at B with a *maximum* length of 17
-  - `$ graph paths-by-distance ./input.csv --start A --end E --operator '==' --value 7` - prints number 
-  of different routes starting at A and ending at E with a length *equal to* 7
+ - `$ graph paths-by-distance ./input.csv --start C --end C --operator '<' --value 30` - prints number 
+ of different routes starting at C and ending at C with a length *less than* 30
+ - `$ graph paths-by-distance ./input.csv -s E -e B -o '<=' -v 17` - prints number 
+ of different routes starting at E and ending at B with a *maximum* length of 17
+ - `$ graph paths-by-distance ./input.csv --start A --end E --operator '==' --value 7` - prints number 
+ of different routes starting at A and ending at E with a length *equal to* 7
 
