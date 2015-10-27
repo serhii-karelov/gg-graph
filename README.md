@@ -1,8 +1,9 @@
 Solution for the graph problem.
 =====================
+Written and tested with python 3.5. 
 How to run test
 ---------------------
-Use `$ python setup.py tests` to run the tests.
+Use `$ python3.5 setup.py tests` to run the tests.
 Usage
 ---------------------
 The packages goes with command line utility (with alias `graph`) witch has following commands:
